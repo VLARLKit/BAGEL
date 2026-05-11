@@ -1,0 +1,1 @@
+"""BAGEL core package."""
