@@ -34,14 +34,12 @@ dependencies = [
     "wandb",
     "wheel",
     "xlsxwriter",
+    "zmq"
 ]
-
-[project.optional-dependencies]
-flash-attn = ["flash-attn==2.5.8"]
 
 [tool.setuptools.packages.find]
 where = ["."]
-include = ["bagel*", "train*"]
+include = ["bagel*"]
 
 [tool.setuptools.package-data]
 "bagel.data" = ["configs/**/*.yaml"]
