@@ -8,7 +8,7 @@ This repository contains the BAGEL-World-Model code used by [VLA-MBPO](https://a
 
 ## Installation
 
-This repository is intended to use an independent uv environment **from the VLARLKit root environment**. You need to ensure VLARLKit has already installed.
+This repository is intended to use an independent uv environment **from the [VLARLKit](https://github.com/VLARLKit/VLARLKit) root environment**. You need to ensure VLARLKit has already installed.
 
 ```bash
 cd VLARLKit/third_party/
@@ -71,3 +71,7 @@ If you find this code useful, please cite:
   year={2026}
 }
 ```
+
+## Acknowledgements
+
+This codebase builds on [Bagel](https://github.com/bytedance-seed/BAGEL), [UniPlan](https://github.com/uni-plan/uni-plan) stack. We thank the authors and maintainers of these projects.
