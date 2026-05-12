@@ -3,7 +3,7 @@
 This repository contains the BAGEL-World-Model code used by [VLA-MBPO](https://arxiv.org/abs/2603.20607).
 
 <p align="center">
-  <img src="assets/vla_mbpo_overall.jpg" alt="VLAMBPO" width="400"/>
+  <img src="assets/vla_mbpo_overall.jpg" alt="VLAMBPO" width="800"/>
 </p>
 
 ## Installation
@@ -56,7 +56,7 @@ Please refer to our [VLARLKit](https://github.com/VLARLKit/VLARLKit) for details
 
 ## Generation Demos
 <p align="center">
-  <img src="assets/AllTasks.png" alt="all_tasks" width="400"/>
+  <img src="assets/AllTasks.png" alt="all_tasks" width="800"/>
 </p>
 
 ## Citation
