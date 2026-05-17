@@ -12,7 +12,7 @@ This repository is intended to use an independent uv environment **from the [VLA
 
 ```bash
 cd VLARLKit/third_party/
-git clone https://github.com/VLARLKit/BAGEL.git
+git submodule update --init "BAGEL"
 uv sync
 uv pip install flash_attn==2.5.8 --no-build-isolation
 ```
@@ -30,7 +30,7 @@ If you encounter any compilation errors when installing `flash_attn`, you can in
 3. After downloading the wheel, install it with:
 
    ```bash
-   pip install <wheel_file>
+   uv pip install <wheel_file>
    ```
 
 ## Required Artifacts
@@ -42,6 +42,7 @@ Before running the full training/inference workflow, prepare the following local
 | --- | --- | --- |
 | Bagel-WM-ckpt | Fine-tuned world model checkpoints | Coming soon |
 | Datasets for finetuning BAGEL | LIBERO and LeRobot datasets for finetuning BAGEL as WMs | Coming soon |
+| Datasets for branch rollouts | Datasets for performing branch rollouts to train MBRL | Coming soon |
 
 ## World-Model Training
 
@@ -51,8 +52,28 @@ World-model training scripts are under `scripts/`:
 bash scripts/train_libero.sh
 ```
 
-## World-Model Inference
-Please refer to our [VLARLKit](https://github.com/VLARLKit/VLARLKit) for details.
+## Training VLAs with World Models (VLA-MBPO)
+
+First, set each loading path in config file ``VLARLKit/examples/configs/libero_goal_vla_mbpo.yaml``,
+
+```yaml
+branch_dataset_root: <your download data dir>
+
+model:
+  model_path: "<your download path>/RLinf-Pi05-LIBERO-SFT"
+  data:
+    assets_dir: "<your download path>/RLinf-Pi05-LIBERO-SFT"
+
+world_model:
+  load_model_path: <your download world model ckpt path>
+```
+
+Now, you can lanuch the script to run!
+
+```bash
+# assume you are at VLARLKit root path
+bash examples/run_vla_mbpo.sh
+```
 
 ## Generation Demos
 <p align="center">
